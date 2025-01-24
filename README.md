@@ -3,7 +3,7 @@
 
 使用kitex与hertz框架，并使用etcd作为注册中心的一个小demo。
 
-可进行繁简体转换。
+可进行繁简体转换，使用到的库[OpenCC for Go](https://github.com/longbridge/opencc)。
 
 [etcd下载](https://github.com/etcd-io/etcd/releases/)
 
