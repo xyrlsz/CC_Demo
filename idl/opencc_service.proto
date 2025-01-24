@@ -1,0 +1,18 @@
+syntax = "proto3";
+package opencc_service;
+
+option go_package = "demo/opencc_service";
+
+ 
+service OpenCCService {
+  rpc Convert (ConvertRequest) returns (ConvertResponse);
+}
+ 
+message ConvertRequest {
+  string type =1;
+  string text = 2;
+}
+
+message ConvertResponse {
+  string result = 1;
+}

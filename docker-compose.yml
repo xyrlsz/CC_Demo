@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  etcd:
+    image: bitnami/etcd:latest
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+
+  rpc:
+    build:
+      context: .
+      dockerfile: ./rpc/opencc/Dockerfile
+    ports:
+      - "8888:8888"
+    depends_on:
+      - etcd
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rpc
+      - etcd
