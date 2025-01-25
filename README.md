@@ -11,6 +11,10 @@
 
 ### 启动etcd
 下载好etcd后直接执行可执行文件。
+### 获取依赖
+```shell
+go mod tidy
+```
 
 ### 启动服务
 ```shell
